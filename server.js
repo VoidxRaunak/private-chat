@@ -16,7 +16,10 @@ io.on("connection", (socket) => {
     socket.username = username;
     socket.room = room;
 
-    socket.to(room).emit("system-message", `${username} joined the chat 👋`);
+    socket.to(room).emit(
+      "system-message",
+      `${username} joined the chat 👋`
+    );
   });
 
   socket.on("send-message", (message) => {
@@ -35,6 +38,7 @@ io.on("connection", (socket) => {
         `${socket.username} left the chat`
       );
     }
+
     console.log("A user disconnected");
   });
 });
@@ -43,6 +47,4 @@ const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, "0.0.0.0", () => {
   console.log(`Chat server running on port ${PORT}`);
-});
-  console.log("Chat server running at http://localhost:3000");
 });
