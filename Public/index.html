@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div id="join-screen">
+      <h1>💬 Private Chat</h1>
+      <p>Enter your details to join</p>
+
+      <input id="username" type="text" placeholder="Your name">
+      <input id="room" type="text" placeholder="Room code">
+
+      <button onclick="joinChat()">Join Chat 🚀</button>
+    </div>
+
+    <div id="chat-screen" class="hidden">
+      <div class="chat-header">
+        <h2>💬 Private Chat</h2>
+        <span id="room-name"></span>
+      </div>
+
+      <div id="messages"></div>
+
+      <div class="message-box">
+        <input id="message" type="text" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send 🚀</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
